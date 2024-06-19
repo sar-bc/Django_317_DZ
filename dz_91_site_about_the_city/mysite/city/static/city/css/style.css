@@ -31,7 +31,7 @@
 
 body{
     font-family: "Roboto", sans-serif;
-    background-image: url("/static/city/img/Engels_46.jpg");
+    background-image: url("../img/Engels_46.jpg");
     /* background-image: url("{% static 'city/img/Engels_46.jpg' %}"); */
     background-repeat: no-repeat;
     background-position: center center; 
