@@ -1,0 +1,50 @@
+{% extends 'city/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+
+    <h3 class="title">Достопримечательности города Энгельс</h3>
+    <p class="title_about">Энгельс — это небольшой город Саратовской области на берегу Волги. Когда-то он был крошечным поселком под названием Покровская Слобода. Со временем разросся и превратился в небольшой уютный городок. В нем много интересных достопримечательностей, которые никого не оставят равнодушными. Итак, что же посмотреть в Энгельсе и куда тут можно сходить?
+                    </p>
+    <hr/>
+     <div class="row">
+<!--CONTENT-->
+{% for p in posts %}
+                             <!--block card-->
+                    <div class="col-md-4 col-sm-12 py-1">
+                        <div class="container box box-fon h-100">
+                            <div class="row">
+                                <div class="col img-box150" style="background-image: url({{p.image.url}});"></div><!--img box-->
+                            </div><!--row img-->
+                            <div class="row">
+                                <div class="col">
+                                    <div class="box-content">
+                                        <h4 class="text-m text-center">{{p.title}}</h4>
+                                    </div>
+                                </div>
+                            </div><!--row-->
+                            <div class="row ">
+                                <div class="col ">
+                                    <div class="box-content">
+                                        {{p.body|safe|truncatewords:15}}
+
+                                    </div>
+                                </div>
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col text-center ">
+                                    <a class="btn btn-sm btn-card" href="{% url 'show_post' p.id %}">Подробнее</a>
+                                </div>
+                                <hr class="space m" />
+                            </div><!--row-->
+
+                        </div><!--container box-->
+                    </div><!--col-->
+                    <!--block card end-->
+         {% endfor %}
+<!--CONTENT END-->
+
+     </div><!--row-->
+</div><!--container-->
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'city/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="title_show">{{post.title}}</h2>
+            <div class="img">
+                <img class="img_show img_w" src="{{ post.image.url }}" alt="">
+            </div>
+            <div class="body">
+                {{post.body}}
+            </div>
+        </div><!--col-->
+    </div><!--row-->
+</div><!--container-->
+{% endblock %}
