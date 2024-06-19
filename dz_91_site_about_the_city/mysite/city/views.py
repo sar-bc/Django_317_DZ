@@ -1,7 +1,20 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from city.models import Posts
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("INDEX")
+    posts = Posts.objects.all()
+    context = {
+        'title': 'Главная',
+        'posts': posts,
+    }
+    return render(request, 'city/index.html', context=context)
+
+
+def show_post(request, id):
+    post = get_object_or_404(Posts, id=id)
+
+    return render(request, 'city/show_post.html', {'post': post})
