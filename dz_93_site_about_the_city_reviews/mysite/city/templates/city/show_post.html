@@ -13,5 +13,35 @@
             </div>
         </div><!--col-->
     </div><!--row-->
+
+    <!--коментарии-->
+    <div class="row body">
+        <div class="col">Комментарии <b style="color:#007cba;">0</b>
+            &nbsp;&nbsp;
+<!--            <a href="#">Добавить комментарий</a>-->
+            Для добавления комментарий<a href="#"> зарегистрируйтесь</a>
+        </div><!--col-->
+        <hr>
+{% comment %}
+        <!--commenty for-->
+        <div class="row">
+            <div class="col">
+                <img src="{%static 'city/img/146.png' %}" alt="" height="24"> Имя
+            </div><!--col-->
+        </div><!--row-->
+        <div class="row">
+            <div class="col">
+                текст
+            </div><!--col-->
+        </div><!--row-->
+        <hr>
+        <!--commenty for end-->
+{% endcomment %}
+
+
+
+    </div><!--row-->
+    <!--коментарии end-->
+
 </div><!--container-->
 {% endblock %}

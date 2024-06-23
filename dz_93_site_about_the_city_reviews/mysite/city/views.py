@@ -16,5 +16,6 @@ def index(request):
 
 def show_post(request, id):
     post = get_object_or_404(Posts, id=id)
-
+    post.views += 1
+    post.save(update_fields=['views'])
     return render(request, 'city/show_post.html', {'post': post})
