@@ -17,12 +17,15 @@
     <!--коментарии-->
     <div class="row body">
         <div class="col">Комментарии <b style="color:#007cba;">0</b>
-            &nbsp;&nbsp;
-<!--            <a href="#">Добавить комментарий</a>-->
-             чтобы оставить комментарий,<a href="#"> зарегистрируйтесь</a>
+            &nbsp;&nbsp
+            {% if request.user.is_authenticated %}
+            <a href="#">Добавить комментарий</a>
+            {% else %}
+            чтобы оставить комментарий,<a href="{%url 'registration'%}"> зарегистрируйтесь</a> или <a href="{%url 'loginuser'%}">Войдите</a>
+            {% endif %}
         </div><!--col-->
         <hr>
-{% comment %}
+        {% comment %}
         <!--commenty for-->
         <div class="row">
             <div class="col">
@@ -36,8 +39,7 @@
         </div><!--row-->
         <hr>
         <!--commenty for end-->
-{% endcomment %}
-
+        {% endcomment %}
 
 
     </div><!--row-->

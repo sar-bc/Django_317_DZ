@@ -1,0 +1,95 @@
+{% extends 'city/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-6">
+            <div class="card login text-center">
+                <div class="card-title login_title">Регистрация</div>
+                <h6 class="card-subtitle mb-2 text-bg-danger">{{error}}</h6>
+                 <div class="card-body ">
+                      <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group ">
+                            <!--username-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.username.label}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.username}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    <small>{{form.username.help_text}}</small>
+                                </div><!--col-->
+                            </div><!--row-->
+                            <!--username end-->
+                        </div><!--group-->
+
+                          <div class="form-group ">
+                            <!--password1-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.password1.label}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.password1}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    <small>{{form.password1.help_text}}</small>
+                                </div><!--col-->
+                            </div><!--row-->
+                            <!--password1 end-->
+                        </div><!--group-->
+
+                         <div class="form-group ">
+                            <!--password2-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.password2.label}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.password2}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    <small>{{form.password2.help_text}}</small>
+                                </div><!--col-->
+                            </div><!--row-->
+                            <!--password2 end-->
+                        </div><!--group-->
+                        <button class="btn login_btn btn-primary">
+                            Зарегистрироваться
+                        </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      </form>
+                     </div><!--card-body-->
+
+                </div><!--card-->
+        </div><!--col-->
+    </div><!--row-->
+</div><!--container-->
+{% endblock %}
