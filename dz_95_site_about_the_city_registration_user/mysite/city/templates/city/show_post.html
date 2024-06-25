@@ -1,0 +1,47 @@
+{% extends 'city/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="title_show">{{post.title}}</h2>
+            <div class="img">
+                <img class="img_show img_w" src="{{ post.image.url }}" alt="">
+            </div>
+            <div class="body bold">
+                {{post.body}}
+            </div>
+        </div><!--col-->
+    </div><!--row-->
+
+    <!--коментарии-->
+    <div class="row body">
+        <div class="col">Комментарии <b style="color:#007cba;">0</b>
+            &nbsp;&nbsp;
+<!--            <a href="#">Добавить комментарий</a>-->
+             чтобы оставить комментарий,<a href="#"> зарегистрируйтесь</a>
+        </div><!--col-->
+        <hr>
+{% comment %}
+        <!--commenty for-->
+        <div class="row">
+            <div class="col">
+                <img src="{%static 'city/img/146.png' %}" alt="" height="24"> Имя
+            </div><!--col-->
+        </div><!--row-->
+        <div class="row">
+            <div class="col">
+                текст
+            </div><!--col-->
+        </div><!--row-->
+        <hr>
+        <!--commenty for end-->
+{% endcomment %}
+
+
+
+    </div><!--row-->
+    <!--коментарии end-->
+
+</div><!--container-->
+{% endblock %}
