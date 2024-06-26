@@ -1,0 +1,54 @@
+{% extends 'city/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card login text-center">
+                <div class="card-title login_title">Авторизация</div>
+                <h6 class="card-subtitle mb-2 text-bg-danger">{{error}}</h6>
+                <div class="card-body ">
+                    <form id="registrationForm" action="" method="post">
+                        {%csrf_token%}
+                        <div class="form-group ">
+                            <!--username-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.username.label}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.username}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <!--username end-->
+                        </div><!--group-->
+                        <div class="form-group">
+                           <!--password-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.password.label}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <div class="row">
+                                <div class="col">
+                                    {{form.password}}
+                                </div><!--col-->
+                            </div><!--row-->
+                            <!--password end-->
+                        </div><!--group-->
+                        <button class="btn login_btn btn-primary">
+                            Войти
+                        </button>
+                    </form>
+                    <p class="mt-3">
+                        Не зарегистрированы?
+                        <a href="{%url 'registration'%}">Регистрация</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--container-->
+{% endblock %}
